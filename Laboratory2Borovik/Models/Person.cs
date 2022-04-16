@@ -15,9 +15,9 @@ namespace Laboratory2Borovik.Models
         private bool isBirthday;
         public Person(string firstName,string lastName,string? email, DateTime birthday)
         {
-            this.FirstName = firstName;
-            this.LastName = lastName;
-            this.Email = email;
+            FirstName = firstName;
+            LastName = lastName;
+            Email = email;
             Birthday = birthday;
         }
         public Person(string firstName, string lastName, string email): this(firstName, lastName, email, DateTime.Today)

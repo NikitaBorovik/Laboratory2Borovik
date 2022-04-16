@@ -78,7 +78,7 @@ namespace Laboratory2Borovik.ViewModels
             }
             else if (age >= 135)
             {
-                MessageBox.Show($"Wrong data!Your must be younger than 135");
+                MessageBox.Show("Wrong data!Your must be younger than 135");
             }
             else
             {
