@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="Laboratory2Borovik.Views.InfoView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Background="White"
+        Width="400">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock  Grid.Row="0" Grid.Column="0" TextAlignment="Center" HorizontalAlignment="Stretch" Text="Your first name:"></TextBlock>
+        <TextBlock  Grid.Row="0" Grid.Column="1" TextAlignment="Center" HorizontalAlignment="Stretch" Text="Your last name:"></TextBlock>
+        <TextBlock  Grid.Row="1" Grid.Column="0" TextAlignment="Center" HorizontalAlignment="Stretch" Text="{Binding FirstName,Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
+        <TextBlock  Grid.Row="1" Grid.Column="1" TextAlignment="Center" HorizontalAlignment="Stretch" Text="{Binding LastName,Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
+        <TextBlock  Grid.Row="2" Grid.Column="0" TextAlignment="Center" HorizontalAlignment="Stretch" Text="Your email:"></TextBlock>
+        <TextBlock  Grid.Row="2" Grid.Column="1" TextAlignment="Center" HorizontalAlignment="Stretch" Text="Your date of birth:"></TextBlock>
+        <TextBlock  Grid.Row="3" Grid.Column="0" TextAlignment="Center" HorizontalAlignment="Stretch" Text="{Binding Email,Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
+        <TextBlock  Grid.Row="3" Grid.Column="1" TextAlignment="Center" HorizontalAlignment="Stretch" Text="{Binding Birthday,Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
+        <TextBlock  Grid.Row="4" Grid.Column="0" TextAlignment="Center" HorizontalAlignment="Stretch" Text="Is adult:"></TextBlock>
+        <TextBlock  Grid.Row="4" Grid.Column="1" TextAlignment="Center" HorizontalAlignment="Stretch" Text="Is birthday:"></TextBlock>
+        <TextBlock  Grid.Row="5" Grid.Column="0" TextAlignment="Center" HorizontalAlignment="Stretch" Text="{Binding IsAdult, UpdateSourceTrigger=PropertyChanged}" ></TextBlock>
+        <TextBlock  Grid.Row="5" Grid.Column="1" TextAlignment="Center" HorizontalAlignment="Stretch" Text="{Binding IsBirthday, UpdateSourceTrigger=PropertyChanged}" Width="Auto" Height="Auto"></TextBlock>
+        <TextBlock  Grid.Row="6" Grid.Column="0" TextAlignment="Center" HorizontalAlignment="Stretch" Margin="1,1,1,1"  Text="Chinese zodiac sign:" Width="Auto" Height="Auto"></TextBlock>
+        <TextBlock  Grid.Row="6" Grid.Column="1" TextAlignment="Center" Text="Western zodiac sign:" Margin="1,1,1,1" Width="Auto"  VerticalAlignment="Bottom"/>
+        <TextBlock  Grid.Row="7" Grid.Column="0" TextAlignment="Center" HorizontalAlignment="Stretch" Text="{Binding ChineseSign, Mode=OneWay,UpdateSourceTrigger=PropertyChanged}" Width="Auto" Height="Auto"></TextBlock>
+        <TextBlock  Grid.Row="7" Grid.Column="1" TextAlignment="Center" HorizontalAlignment="Stretch" Text="{Binding SunSign, Mode=OneWay,UpdateSourceTrigger=PropertyChanged}" Width="Auto" Height="Auto"></TextBlock>
+        <Button Content="Go back" Grid.Row="8" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Margin="5,5,5,5" VerticalAlignment="Stretch" Width="Auto" Command="{Binding GotoLoginCommand}"/>
+    </Grid>
+</UserControl>
