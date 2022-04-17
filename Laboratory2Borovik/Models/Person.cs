@@ -13,19 +13,7 @@ namespace Laboratory2Borovik.Models
         private string sunSign;
         private bool isAdult;
         private bool isBirthday;
-        public Person(string firstName,string lastName,string? email, DateTime birthday)
-        {
-            FirstName = firstName;
-            LastName = lastName;
-            Email = email;
-            Birthday = birthday;
-        }
-        public Person(string firstName, string lastName, string email): this(firstName, lastName, email, DateTime.Today)
-        {
-        }
-        public Person(string firstName, string lastName, DateTime birthday):this(firstName, lastName, null, birthday)
-        {
-        }
+        
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string? Email { get; set; }
@@ -50,6 +38,20 @@ namespace Laboratory2Borovik.Models
         public string SunSign
         {
             get => sunSign;
+        }
+
+        public Person(string firstName, string lastName, string? email, DateTime birthday)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+            Email = email;
+            Birthday = birthday;
+        }
+        public Person(string firstName, string lastName, string email) : this(firstName, lastName, email, DateTime.Today)
+        {
+        }
+        public Person(string firstName, string lastName, DateTime birthday) : this(firstName, lastName, null, birthday)
+        {
         }
         public int Age()
         {
