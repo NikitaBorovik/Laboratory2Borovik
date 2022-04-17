@@ -128,7 +128,7 @@ namespace Laboratory2Borovik.Models
             if (Birthday.Day >= 23 && Birthday.Month == 11 ||
                Birthday.Day <= 21 && Birthday.Month == 12)
             {
-                sunSign = SunSigns.Saggitaurus.ToString();
+                sunSign = SunSigns.Saggitarius.ToString();
                 return;
             }
 
@@ -144,7 +144,7 @@ namespace Laboratory2Borovik.Models
                     chineseSign = ChineseSigns.Monkey.ToString();
                     break;
                 case 1:
-                    chineseSign = ChineseSigns.Roster.ToString();
+                    chineseSign = ChineseSigns.Rooster.ToString();
                     break;
                 case 2:
                     chineseSign = ChineseSigns.Dog.ToString();
@@ -198,7 +198,7 @@ namespace Laboratory2Borovik.Models
         Virgo,
         Libra,
         Scorpio,
-        Saggitaurus,
+        Saggitarius,
         Capricorn,
         Aquarius,
         Pisces,
@@ -206,7 +206,7 @@ namespace Laboratory2Borovik.Models
     enum ChineseSigns
     {
         Monkey,
-        Roster,
+        Rooster,
         Dog,
         Pig,
         Rat,
