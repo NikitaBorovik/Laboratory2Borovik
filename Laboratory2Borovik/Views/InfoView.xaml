@@ -35,7 +35,7 @@
         <TextBlock  Grid.Row="5" Grid.Column="0" TextAlignment="Center" HorizontalAlignment="Stretch" Text="{Binding IsAdult, UpdateSourceTrigger=PropertyChanged}" ></TextBlock>
         <TextBlock  Grid.Row="5" Grid.Column="1" TextAlignment="Center" HorizontalAlignment="Stretch" Text="{Binding IsBirthday, UpdateSourceTrigger=PropertyChanged}" Width="Auto" Height="Auto"></TextBlock>
         <TextBlock  Grid.Row="6" Grid.Column="0" TextAlignment="Center" HorizontalAlignment="Stretch" Margin="1,1,1,1"  Text="Chinese zodiac sign:" Width="Auto" Height="Auto"></TextBlock>
-        <TextBlock  Grid.Row="6" Grid.Column="1" TextAlignment="Center" Text="Western zodiac sign:" Margin="1,1,1,1" Width="Auto"  VerticalAlignment="Bottom"/>
+        <TextBlock  Grid.Row="6" Grid.Column="1" TextAlignment="Center" Text="Sun zodiac sign:" Margin="1,1,1,1" Width="Auto"  VerticalAlignment="Bottom"/>
         <TextBlock  Grid.Row="7" Grid.Column="0" TextAlignment="Center" HorizontalAlignment="Stretch" Text="{Binding ChineseSign, Mode=OneWay,UpdateSourceTrigger=PropertyChanged}" Width="Auto" Height="Auto"></TextBlock>
         <TextBlock  Grid.Row="7" Grid.Column="1" TextAlignment="Center" HorizontalAlignment="Stretch" Text="{Binding SunSign, Mode=OneWay,UpdateSourceTrigger=PropertyChanged}" Width="Auto" Height="Auto"></TextBlock>
         <Button Content="Go back" Grid.Row="8" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Margin="5,5,5,5" VerticalAlignment="Stretch" Width="Auto" Command="{Binding GotoLoginCommand}"/>
