@@ -7,6 +7,8 @@ using System.Runtime.CompilerServices;
 using Laboratory2Borovik.Navigation;
 using System.Threading.Tasks;
 using Laboratory2Borovik.Sending;
+using System.Text.RegularExpressions;
+using Laboratory2Borovik.Exceptions;
 
 namespace Laboratory2Borovik.ViewModels
 {
@@ -68,20 +70,30 @@ namespace Laboratory2Borovik.ViewModels
             Environment.Exit(0);
         }
 
+        
+
+
         private async void Proceed()
         {
-            ourPerson = new Person(FirstName, LastName, Email, BirthDate);
-            int age = await Task.Run(() => ourPerson.Age());
-            if (age < 0)
+            try
             {
-                MessageBox.Show("Wrong data!You must be older than 0");
+                ourPerson = new Person(FirstName, LastName, Email, BirthDate);
             }
-            else if (age >= 135)
+            catch (IncorrectEmailException ex)
             {
-                MessageBox.Show("Wrong data!Your must be younger than 135");
+                MessageBox.Show($"Error: {ex.Message}");
+                return;
             }
-            else
+            catch (AgeIsTooBigException ex)
             {
+                MessageBox.Show($"Error: {ex.Message}");
+                return;
+            }
+            catch (BirthdayInFutureException ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+                return;
+            }
                 Task t1 = Task.Run(() => ourPerson.CalculateIsBirthday());
                 Task t2 = Task.Run(() => ourPerson.CalculateIsAdult());
                 Task t3 = Task.Run(() => ourPerson.CalculateChineseSign());
@@ -92,7 +104,6 @@ namespace Laboratory2Borovik.ViewModels
                 await t4;
                 PersonSender.person = ourPerson;
                 gotoInfo.Invoke();
-            }
         }
         private bool CanExecute(object o)
         {

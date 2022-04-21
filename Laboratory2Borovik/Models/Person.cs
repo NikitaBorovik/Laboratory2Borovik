@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Laboratory2Borovik.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Laboratory2Borovik.Models
@@ -13,6 +15,7 @@ namespace Laboratory2Borovik.Models
         private string sunSign;
         private bool isAdult;
         private bool isBirthday;
+        private int age;
         
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -46,6 +49,19 @@ namespace Laboratory2Borovik.Models
             LastName = lastName;
             Email = email;
             Birthday = birthday;
+            age = Age();
+            if (!ValidateEmail(email))
+            {
+                throw new IncorrectEmailException("Your email is incorrect");
+            }
+            if (age < 0)
+            {
+                throw new BirthdayInFutureException("Your age is below 0.It can't be true");
+            }
+            if (age > 135)
+            {
+                throw new BirthdayInFutureException("Your age is above 135.It can't be true");
+            }
         }
         public Person(string firstName, string lastName, string email) : this(firstName, lastName, email, DateTime.Today)
         {
@@ -179,6 +195,11 @@ namespace Laboratory2Borovik.Models
                     chineseSign = ChineseSigns.Goat.ToString();
                     break;
             }
+        }
+        private bool ValidateEmail(string email)
+        {
+            Regex regex = new Regex(@"(\w+)@(\w+)\.(\w+)");
+            return regex.IsMatch(email);
         }
         public void CalculateIsAdult()
         {
