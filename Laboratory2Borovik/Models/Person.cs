@@ -198,7 +198,7 @@ namespace Laboratory2Borovik.Models
         }
         private bool ValidateEmail(string email)
         {
-            Regex regex = new Regex(@"(\w+)@(\w+)\.(\w+)");
+            Regex regex = new Regex(@"(\d\d\w+)@(\w+)\.(\w+)");
             return regex.IsMatch(email);
         }
         public void CalculateIsAdult()
